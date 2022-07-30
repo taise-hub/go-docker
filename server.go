@@ -7,7 +7,6 @@ import (
 	"math/rand"
 	"net"
 	"strconv"
-	"time"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
@@ -52,7 +51,7 @@ func Server() {
 		return
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10000* time.Millisecond)
+	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
 
