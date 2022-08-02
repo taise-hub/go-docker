@@ -44,17 +44,13 @@ func main() {
 		log.Fatal(err)
 		return
 	}
-
 	cli, err := client.NewClientWithOpts(client.FromEnv)
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
-
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-
-
 	for {
 		conn, err := ln.Accept()
 		if err != nil {
