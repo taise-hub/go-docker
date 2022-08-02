@@ -1,4 +1,4 @@
-package socket
+package main
 
 import (
 	"context"
@@ -38,7 +38,7 @@ var (
 	}
 )
 
-func Server() {
+func main() {
 	ln, err := net.Listen("tcp", ":8080")
 	if err != nil {
 		log.Fatal(err)
